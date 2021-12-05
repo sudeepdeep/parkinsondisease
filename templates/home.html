@@ -33,6 +33,7 @@ header{
 .title{
     background-color:rgb(168, 167, 167);
     display: flex;
+    justify-content: space-between;
 }
 
 h1{
@@ -55,15 +56,7 @@ form{
     margin: 10px 20px;
 }
 
-/* section{
-    padding-top:110px;
-    height:100vh;
-    width:100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-} */
+
 
 .inp1{
     display: flex;
@@ -74,9 +67,17 @@ form{
     margin-top: 20px;
 }
 
-input[type = number]{
+input[type = text]{
     border:none;
     border-bottom: 2px solid rgba(66, 205, 240, 0.856);
+}
+
+#treatment{
+    background-color:rgb(168, 167, 167);
+    text-decoration:none; 
+    color: black;
+    padding-left:50px;
+    margin-top: 15px;
 }
 
 </style>
@@ -85,16 +86,22 @@ input[type = number]{
         <header>
         
             <div class = "title">
-                <img src = "static/images/love.png" width = "70px" height = "70px"/>
+                <a href = "/"><img src = "static/images/love.png" width = "70px" height = "70px"/></a>
                 <h1>Parkinsons Disease Prediction</h1>
+                <a href = "/treatment" id = "treatment">Treatment/Medication</a>
             </div>
            
         </header>
         <form action = "/", method = "POST">
             {% if message %}
-            {{message}}
+            {% if typing %}
+
+            <h5 style = "color: {{typing}};">{{message}}</h5>
+            {% endif %}
+          
             {% endif %}
             <section>
+                <h3>hai</h3>
                 <div class = "inp1">
                     <input type="text" name = "1" class = "form-control" placeholder="enter value"/>
                     
