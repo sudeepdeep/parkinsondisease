@@ -94,13 +94,15 @@ input[type = text]{
         </header>
         <form action = "/", method = "POST">
             {% if message %}
-            {% if typing %}
-
-            <h5 style = "color: typing;">{{message}}</h5>
-            {% endif %}
+                {% if typing == 'red' %}
+                    <h5 style = "color:red ;">{{message}}</h5>
+                {% else %}
+                    <h5 style = "color:green ;">{{message}}</h5>
+                {% endif %}
           
             {% endif %}
             <section>
+               
                 <div class = "inp1">
                     <input type="text" name = "1" class = "form-control" placeholder="enter value"/>
                     
